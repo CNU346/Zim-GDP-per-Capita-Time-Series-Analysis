@@ -1,0 +1,320 @@
+data()
+data(airquality)
+airquality
+m = arima(airquality$Temp, order = c(1,0,0))
+plot(m, n = 100)
+m
+x = ts(airquality$Temp)
+x
+plot(x)
+acf(x)
+acf(x, 15)
+ACF = ARMAacf(ar = 0, ma = c(-0.8, +0.5), lag.max = 15, pacf = FALSE)
+ACF
+plot(ACF)
+plot(ACF, type = "h")
+ACF[-1]
+plot(ACF[-1], type = "h")
+require(astsa)
+require(TSA)
+data(TSA)
+install.packages("astsa")
+help(lsfit)
+help(arima)
+data(airquality)
+m = arima(airquality$Temp, order = c(2,0,0), method = "CSS")
+help(arimacf)
+help(ARIMAacf)
+help(acf)
+help(ARM
+>
+_))
+help(ARMAacf)
+m$coefficients
+m
+m$Coefficients
+m$coef
+ACF = ARMAacf(m)
+ACF = ARMAacf(list(m$coef))
+ACF
+plot(ACF)
+m1 = sarima.for(airquality$Temp,20,1,1,0, no.constant = FALSE)
+q()
+library(astsa)
+model = arima.sim(list(order = c(1,0,0)), 200, n.start = 1000)
+model = sarima.sim(list(order = c(1,0,0)), 200, n.start = 1000)
+model = arima.sim(list(order = c(1,0,0)), 200, n.start = 1000)
+model = arima.sim(list(order = c(1,0,0)), 200)
+help(arima.sim)
+model = arima.sim(list(order = c(1,0,0), ar = 0.8), 200, n.start = 1000)
+par(mfrow = c(1,2))
+acf0 = acf(model, 20)
+pcf1 = pacf(model, 20)
+par(mfrow = c(2,2))
+plot(acf0)
+plot(pcf1)
+acf1 = acf(diff(model), 20)
+pcf1 = pcf(diff(model), 20)
+pcf1 = pacf(diff(model), 20)
+q()
+arima.sim(order = list(1,10), ar = 0.7, n = 200)
+arima.sim(list(order = (1,1,0), ar = 0.7), n = 200)
+arima.sim(list(order = c(1,1,0), ar = 0.7), n = 200)
+ts.sim = arima.sim(list(order = c(1,1,0), ar = 0.7), n = 200)
+plot(ts.sim)
+setwd("C:/Users/VALE/Desktop/Economic Indicators")
+indicators = read.csv("indicators.csv", header = TRUE)
+indicators
+data(lh)
+lh
+acf(lh, type = c("correlation", "covariance", "partial"), plot = TRUE)
+acf(lh, type = partial", plot = TRUE)
+""
+acf(lh, type = "partial", plot = TRUE)
+library(MASS)
+ARMAacf(ar = 2, ma = 0.7, lag.max = 10)
+(gdp <- ar(indicators$GDP, aic = FALSE, order.max = 3, method = "mle"))
+(gdp <- ar(lh, aic = FALSE, order.max = 3, method = "mle"))
+(gdp <- ar(lh, aic = FALSE, order.max = 3, method = "mle"))
+indicators
+(gdp <- ar(indicators$GDP, aic = FALSE, order.max = 4))
+plot(gdp)
+gdp
+(gdp <- ar(indicators$GDP, aic = F, order.max = 4))
+cpgram(gdp$reid, main = "GDP Fit with p = 4")
+cpgram(gdp$resid, main = "GDP Fit with p = 4")
+gdp$aic
+gdp$var.pred
+gdp$call
+gdp2 <- ar(indicators$GDP, aic = F, order.max = 9)
+gdp2
+par(mfrow = c(1,2))
+cgram(gpd$resid, main = "GDP Fit with p = 4")
+cpgram(gpd$resid, main = "GDP Fit with p = 4")
+cpgram(gdp$resid, main = "GDP Fit with p = 4")
+cpgram(gdp2$resid, main = "GDP Fit with p = 9")
+tsdiag(gdp)
+model1 = arima(indicators$GDP, order = c(1,0,0))
+model1 = arima(indicators$GDP, order = c(2,1,0))
+model1 = arima(indicators$GDP, order = c(1,1,0))
+model2 = arima(indicators$GDP, order = c(1,0,1))
+model1 = arima(indicators$GDP_PER_CAPITA, order = c(1,0,0))
+model2 = arima(indicators$GDP_PER_CAPITA, order = c(1,0,1))
+model3 = arima(indicators$GDP_PER_CAPITA, order = c(2,0,1))
+model3 = arima(indicators$GDP_PER_CAPITA, order = c(2,0,2))
+model4 = arima(indicators$GDP_PER_CAPITA, order = c(2,0,2))
+model3 = arima(indicators$GDP_PER_CAPITA, order = c(2,0,1))
+model5 = arima(indicators$GDP_PER_CAPITA, order = c(1,1,0))
+model6 = arima(indicators$GPD_PER_CAPITA, order = c(1,1,1))
+model6 = arima(indicators$GDP_PER_CAPITA, order = c(1,1,1))
+model7 = arima(indicators$GDP_PER_CAPITA, order = c(2,1,1))
+model8 = arima(indicators$GPD_PER_CAPITA, order = c(2,1,2))
+model8 = arima(indicators$GDP_PER_CAPITA, order = c(2,1,2))
+tsdiag(model1)
+tsdiag(model2)
+tsdiag(model3)
+tsdiag(model4)
+tsdiag(model5)
+tsdiag(model4)
+tsdiag(model6)
+tsdiag(model7)
+tsdiag(model4)
+tsdiag(model2)
+tsdiag(model7)
+tsdiag(model5)
+tsdiag(model8)
+model4$aic
+model7$aic
+model5$aic
+model6$aic
+model5$loglik
+model5$loglik
+model6$loglik
+2(model5$loglik-model6$loglik)
+2*(model5$loglik-model6$loglik)
+qchisq(0.95, 1)
+tsdiag(model2)
+2*(model5$loglik-model2$loglik)
+library(forecast)
+fitted(model4)
+plot(fitted(model4))
+par(mfrow = c(1,1))
+plot(indicators$GDP_PER_CAPITA)
+plot(indicators$GDP_PER_CAPITA, type = "l")
+addlines(fitted(model4))
+lines(fitted(model4))
+plot(indicators$GDP_PER_CAPITA, type = "l", lty = 1)
+plot(indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1)
+lines(fitted(model4), lty = 2, col = 2)
+plot(indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA")
+lines(fitted(model4), lty = 2, col = 2)
+help("plot")
+indicators
+plot(indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", xlim = (1960, 2021))
+plot(indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", xlim = c(1960, 2021))
+plot(indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", xlim = c(1960, 2021))
+plot(y = indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", x = c(1960:2021))
+lines(fitted(model4), lty = 2, col = 2)
+lines(y = fitted(model4), lty = 2, col = 2, x = c(1960:2021))
+legend(0,0,c("Actual", "Predicted"), col = 1:2, lty = 1:2))
+legend(0,0,c("Actual", "Predicted"), col = 1:2, lty = 1:2)
+legend(25,1,c("Actual", "Predicted"), col = 1:2, lty = 1:2)
+legend(25,0.1,c("Actual", "Predicted"), col = 1:2, lty = 1:2)
+plot(y = indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", x = c(1960:2021))
+lines(y = fitted(model4), lty = 2, col = 2, x = c(1960:2021))
+legend(25,0.1,c("Actual", "Predicted"), col = 1:2, lty = 1:2)
+help("legend")
+locator(1)
+legend(locator(1),c("Actual", "Predicted"), col = 1:2, lty = 1:2)
+plot(y = indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", x = c(1960:2021))
+lines(y = fitted(model4), lty = 2, col = 2, x = c(1960:2021))
+legend(locator(1),c("Actual", "Predicted"), col = 1:2, lty = 1:2)
+legend(locator(1),c("Actual", "Predicted"), col = 1:2, lty = 1:2, lwd = 2)
+legend(locator(1),c("Actual", "Predicted"), col = 1:2, lty = 1:2, lwd = 1)
+plot(y = indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", x = c(1960:2021))
+lines(y = fitted(model4), lty = 2, col = 2, x = c(1960:2021))
+legend(locator(1),c("Actual", "Predicted"), col = 1:2, lty = 1:2, lwd = 1)
+plot(y = indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", x = c(1960:2021), main = "The Zimbabwean GDP per Capita For the Past 61 Years")
+lines(y = fitted(model4), lty = 2, col = 2, x = c(1960:2021))
+legend(locator(1),c("Actual", "Predicted"), col = 1:2, lty = 1:2, lwd = 1)
+plot(y = indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", x = c(1960:2021), main = "The Zimbabwean GDP per Capita For the Past 61 Years", tck = 1)
+par(mfrow = c(1,1), bg = "grey", lwd = 2, tck = 1)
+plot(y = indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 1, xlab = "Years", ylab = "GDP PER CAPITA", x = c(1960:2021), main = "The Zimbabwean GDP per Capita For the Past 61 Years")
+plot(y = indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 3, xlab = "Years", ylab = "GDP PER CAPITA", x = c(1960:2021), main = "The Zimbabwean GDP per Capita For the Past 61 Years")
+lines(y = fitted(model4), lty = 2, col = 2, x = c(1960:2021))
+legend(locator(1),c("Actual", "Predicted"), col = 2:3, lty = 1:2, lwd = 2)
+plot(y = indicators$GDP_PER_CAPITA, type = "l", lty = 1, col = 3, xlab = "Years", ylab = "GDP PER CAPITA", x = c(1960:2021), main = "The Zimbabwean GDP per Capita For the Past 61 Years")
+lines(y = fitted(model4), lty = 2, col = 2, x = c(1960:2021))
+legend(locator(1),c("Actual", "Fitted"), col = 2:3, lty = 1:2, lwd = 2)
+library(astsa)
+sarima.for(indicators$GDP_PER_CAPITA, 10, 2, 0, 2)
+help(sarima.for)
+series <- ts(indicators$GDP_PER_CAPITA)
+acf(series)
+g <- arima(series, order = c(4,0,2))
+tsdiag(g)
+pacf(series)
+p = pacf(series)
+p
+acf(series)
+over <- arima(series, order = c(2,0,4))
+tsdiag(over)
+plot(series)
+lines(fitted(series))
+lines(fitted(over))
+plot(series)
+lines(fitted(over), col = 2)
+qchisq(0.95, 2)
+2*(over$loglik-model4$loglik)
+over$aic
+model4$aic
+data(deaths)
+deaths
+stl(deaths, "periodic")
+y = stl(deaths, "periodic")
+y["seasonal"]
+y[0]
+y$seasonal
+plot(y)
+y$rem
+y
+y$rem
+help("stlf")
+plot.stl(y)
+y$time.series$sea
+y$time.series
+data("airmiles")
+airmiles
+data("AirPassengers")
+plot(AirPassengers)
+AirPassengers
+ap <- ts(start = c(1949,1), frequency = 12)
+log.ap <- log(ap)
+m1 <- sarima.for(lag.ap, 24, 0,1,1,0,1,1,12)
+m1 <- sarima.for(log.ap, 24, 0,1,1,0,1,1,12)
+m1 <- ts(AirPassengers, start = c(1949,1), frequency = 12)
+ap <- ts(AirPassengers, start = c(1949,1), frequency = 12)
+log.ap <- log(ap)
+m1 <- sarima.for(log.ap, 24, 0,1,1,0,1,1,12)
+m1
+help(ar)
+ar(deaths)
+ar(deaths)$order
+ar(diff(deaths,12))$order
+model2
+tsdiag(model2)
+tsdiag(model4)
+model2$loglik
+model2$aic
+model4$aic
+tsdiag(model3)
+series
+indicators$GDP_PER_CAPITA
+model3
+tsdiag(model3)
+modd <- arima(series, order = c(2,0,4))
+tsdiag(modd)
+modd$aic
+2*(modd$loglik-model4$loglik)
+qchisq(0.95, 2)
+qchisq(0.975, 2)
+qchisq(0.95, 2)
+tsdiag(model3)
+sarima(seris, 2,0,4)
+sarima(series, 2,0,4)
+sarima(series, 2,0,2)
+sarima(series, 2,0,3)
+sarima(series, 2,0,4, no.constant = FALSE)
+sarima(series, 2,0,2, no.constant = FALSE)
+model4$mask
+model4$var.coef
+model4$arma
+model4$model
+dia <- tsdiag(model4)
+dia
+model4
+tsdiag(model4)
+par(mfrow = c(1,1), bg = "grey", tck = 1)
+tsdiag(model4)
+sink("source.R")
+m2 <- arima(series, order = c(2,0,2))
+m3 <-arima(series, order = c(2,0,3))
+m4 <-arima(series, order = c(2,0,4))
+m2$loglik
+m2$loglik
+(m2$loglik)
+print(m2$loglik)
+sink()
+m2$loglik
+m2$loglik
+m3$loglik
+m4$loglik
+m2$aic
+m3$aic
+qchisq(0.95, 1)
+2*(m3$loglik-m2$loglik)
+pchisq(3.462437, 1)
+pchisq(3.462437, 1, lower.tail = FALSE)
+m2
+help(arima)
+plot(x = 1960:2021, y = series, xlab = "Year", ylab = "GDP per Capita", col = 3)
+plot(x = 1960:2021, y = series, xlab = "Year", ylab = "GDP per Capita", type = "l", col = 3)
+lines(x = 1960:2021, y = fitted(m2), col = 4, type = "l")
+legend(locator(), c("Actual", "Fitted"), 3:4)
+help("legend")
+legend(locator(), c("Actual", "Fitted"), col = 3:4)
+legend(locator(), c("Actual", "Fitted"), col = 3:4, lty = 1)
+legend(locator(), c("Actual", "Fitted"), col = 3:4, lty = 1, box.lwd = 5)
+plot(x = 1960:2021, y = series, xlab = "Year", ylab = "GDP per Capita", type = "l", col = 3)
+lines(x = 1960:2021, y = fitted(m2), col = 4, type = "l")
+legend(locator(), c("Actual", "Fitted"), col = 3:4, lty = 1)
+plot(x = 1960:2021, y = series, xlab = "Year", ylab = "GDP per Capita", type = "l", col = 3)
+lines(x = 1960:2021, y = fitted(m2), col = 4, type = "l")
+legend(locator(), c("Actual", "Fitted"), col = 3:4, lty = 1)
+tsdiag(m2)
+sarima(series, 2,0,2)
+sarima.for(series, 5, 2,0,2)
+GDP_PER_CAPITA = series
+sarima.for(GDP_PER_CAPITA, 5, 2,0,2)
+save()
+savehistory("sources.txt")
